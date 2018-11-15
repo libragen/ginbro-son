@@ -1,0 +1,1138 @@
+swagger: "2.0"
+info:
+  description: "Ginbo RESTful APIs"
+  version: "1.0.0"
+  title: "Ginbo RESTful APIs Application"
+host: "127.0.0.1:5555"
+basePath: "/api/v1"
+
+schemes:
+- "http"
+paths:
+  
+  /wp-litespeed-img-optm:
+
+    get:
+      tags:
+      - "wp-litespeed-img-optm"
+      summary: "get all wp-litespeed-img-optm by pagination"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "where"
+        in: "query"
+        description: "column:value will use sql LIKE for search eg:id:67 will where id >67 eg2: name:eric => where name LIKE '%eric%'"
+        required: false
+        type: "array"
+        items:
+          type: "string"
+      - name: "fields"
+        in: "query"
+        description: "{$column},{$column}... "
+        required: false
+        type: "string"
+      - name: "order"
+        in: "query"
+        description: "eg: id desc, name desc"
+        required: false
+        type: "string"
+      - name: "offset"
+        in: "query"
+        description: "sql offset eg: 10"
+        required: false
+        type: "integer"
+      - name: "limit"
+        in: "query"
+        default: "2"
+        description: "limit returning object count"
+        required: false
+        type: "integer"
+
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/WpLitespeedImgOptmPagination"
+    post:
+      tags:
+      - "wp-litespeed-img-optm"
+      summary: "create wp-litespeed-img-optm"
+      description: "create wp-litespeed-img-optm"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "create wp-litespeed-img-optm"
+        required: true
+        schema:
+          $ref: "#/definitions/WpLitespeedImgOptm"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+
+    patch:
+      tags:
+      - "wp-litespeed-img-optm"
+      summary: "update wp-litespeed-img-optm"
+      description: "update wp-litespeed-img-optm"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "create wp-litespeed-img-optm"
+        required: true
+        schema:
+          $ref: "#/definitions/WpLitespeedImgOptm"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+
+  /wp-litespeed-img-optm/{Id}:
+    get:
+      tags:
+      - "wp-litespeed-img-optm"
+      summary: "get a wp-litespeed-img-optm by ID"
+      description: "get a wp-litespeed-img-optm by ID"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id"
+        in: "path"
+        description: "ID of wp-litespeed-img-optm to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/WpLitespeedImgOptm"
+    delete:
+      tags:
+      - "wp-litespeed-img-optm"
+      summary: "Destroy a wp-litespeed-img-optm by ID"
+      description: "delete a wp-litespeed-img-optm by ID"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id"
+        in: "path"
+        description: "ID of wp-litespeed-img-optm to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+  
+  /wp-litespeed-optimizer:
+
+    get:
+      tags:
+      - "wp-litespeed-optimizer"
+      summary: "get all wp-litespeed-optimizer by pagination"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "where"
+        in: "query"
+        description: "column:value will use sql LIKE for search eg:id:67 will where id >67 eg2: name:eric => where name LIKE '%eric%'"
+        required: false
+        type: "array"
+        items:
+          type: "string"
+      - name: "fields"
+        in: "query"
+        description: "{$column},{$column}... "
+        required: false
+        type: "string"
+      - name: "order"
+        in: "query"
+        description: "eg: id desc, name desc"
+        required: false
+        type: "string"
+      - name: "offset"
+        in: "query"
+        description: "sql offset eg: 10"
+        required: false
+        type: "integer"
+      - name: "limit"
+        in: "query"
+        default: "2"
+        description: "limit returning object count"
+        required: false
+        type: "integer"
+
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/WpLitespeedOptimizerPagination"
+    post:
+      tags:
+      - "wp-litespeed-optimizer"
+      summary: "create wp-litespeed-optimizer"
+      description: "create wp-litespeed-optimizer"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "create wp-litespeed-optimizer"
+        required: true
+        schema:
+          $ref: "#/definitions/WpLitespeedOptimizer"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+
+    patch:
+      tags:
+      - "wp-litespeed-optimizer"
+      summary: "update wp-litespeed-optimizer"
+      description: "update wp-litespeed-optimizer"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "create wp-litespeed-optimizer"
+        required: true
+        schema:
+          $ref: "#/definitions/WpLitespeedOptimizer"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+
+  /wp-litespeed-optimizer/{Id}:
+    get:
+      tags:
+      - "wp-litespeed-optimizer"
+      summary: "get a wp-litespeed-optimizer by ID"
+      description: "get a wp-litespeed-optimizer by ID"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id"
+        in: "path"
+        description: "ID of wp-litespeed-optimizer to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/WpLitespeedOptimizer"
+    delete:
+      tags:
+      - "wp-litespeed-optimizer"
+      summary: "Destroy a wp-litespeed-optimizer by ID"
+      description: "delete a wp-litespeed-optimizer by ID"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id"
+        in: "path"
+        description: "ID of wp-litespeed-optimizer to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+  
+  /wp-post:
+
+    get:
+      tags:
+      - "wp-post"
+      summary: "get all wp-post by pagination"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "where"
+        in: "query"
+        description: "column:value will use sql LIKE for search eg:id:67 will where id >67 eg2: name:eric => where name LIKE '%eric%'"
+        required: false
+        type: "array"
+        items:
+          type: "string"
+      - name: "fields"
+        in: "query"
+        description: "{$column},{$column}... "
+        required: false
+        type: "string"
+      - name: "order"
+        in: "query"
+        description: "eg: id desc, name desc"
+        required: false
+        type: "string"
+      - name: "offset"
+        in: "query"
+        description: "sql offset eg: 10"
+        required: false
+        type: "integer"
+      - name: "limit"
+        in: "query"
+        default: "2"
+        description: "limit returning object count"
+        required: false
+        type: "integer"
+
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/WpPostPagination"
+    post:
+      tags:
+      - "wp-post"
+      summary: "create wp-post"
+      description: "create wp-post"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "create wp-post"
+        required: true
+        schema:
+          $ref: "#/definitions/WpPost"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+
+    patch:
+      tags:
+      - "wp-post"
+      summary: "update wp-post"
+      description: "update wp-post"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "create wp-post"
+        required: true
+        schema:
+          $ref: "#/definitions/WpPost"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+
+  /wp-post/{Id}:
+    get:
+      tags:
+      - "wp-post"
+      summary: "get a wp-post by ID"
+      description: "get a wp-post by ID"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id"
+        in: "path"
+        description: "ID of wp-post to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/WpPost"
+    delete:
+      tags:
+      - "wp-post"
+      summary: "Destroy a wp-post by ID"
+      description: "delete a wp-post by ID"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id"
+        in: "path"
+        description: "ID of wp-post to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+  
+  /wp-user:
+
+    get:
+      tags:
+      - "wp-user"
+      summary: "get all wp-user by pagination"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "where"
+        in: "query"
+        description: "column:value will use sql LIKE for search eg:id:67 will where id >67 eg2: name:eric => where name LIKE '%eric%'"
+        required: false
+        type: "array"
+        items:
+          type: "string"
+      - name: "fields"
+        in: "query"
+        description: "{$column},{$column}... "
+        required: false
+        type: "string"
+      - name: "order"
+        in: "query"
+        description: "eg: id desc, name desc"
+        required: false
+        type: "string"
+      - name: "offset"
+        in: "query"
+        description: "sql offset eg: 10"
+        required: false
+        type: "integer"
+      - name: "limit"
+        in: "query"
+        default: "2"
+        description: "limit returning object count"
+        required: false
+        type: "integer"
+
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/WpUserPagination"
+    post:
+      tags:
+      - "wp-user"
+      summary: "create wp-user"
+      description: "create wp-user"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "create wp-user"
+        required: true
+        schema:
+          $ref: "#/definitions/WpUser"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+
+    patch:
+      tags:
+      - "wp-user"
+      summary: "update wp-user"
+      description: "update wp-user"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "create wp-user"
+        required: true
+        schema:
+          $ref: "#/definitions/WpUser"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+
+  /wp-user/{Id}:
+    get:
+      tags:
+      - "wp-user"
+      summary: "get a wp-user by ID"
+      description: "get a wp-user by ID"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id"
+        in: "path"
+        description: "ID of wp-user to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/WpUser"
+    delete:
+      tags:
+      - "wp-user"
+      summary: "Destroy a wp-user by ID"
+      description: "delete a wp-user by ID"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id"
+        in: "path"
+        description: "ID of wp-user to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+  
+  /wp-yoast-seo-link:
+
+    get:
+      tags:
+      - "wp-yoast-seo-link"
+      summary: "get all wp-yoast-seo-link by pagination"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "where"
+        in: "query"
+        description: "column:value will use sql LIKE for search eg:id:67 will where id >67 eg2: name:eric => where name LIKE '%eric%'"
+        required: false
+        type: "array"
+        items:
+          type: "string"
+      - name: "fields"
+        in: "query"
+        description: "{$column},{$column}... "
+        required: false
+        type: "string"
+      - name: "order"
+        in: "query"
+        description: "eg: id desc, name desc"
+        required: false
+        type: "string"
+      - name: "offset"
+        in: "query"
+        description: "sql offset eg: 10"
+        required: false
+        type: "integer"
+      - name: "limit"
+        in: "query"
+        default: "2"
+        description: "limit returning object count"
+        required: false
+        type: "integer"
+
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/WpYoastSeoLinkPagination"
+    post:
+      tags:
+      - "wp-yoast-seo-link"
+      summary: "create wp-yoast-seo-link"
+      description: "create wp-yoast-seo-link"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "create wp-yoast-seo-link"
+        required: true
+        schema:
+          $ref: "#/definitions/WpYoastSeoLink"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+
+    patch:
+      tags:
+      - "wp-yoast-seo-link"
+      summary: "update wp-yoast-seo-link"
+      description: "update wp-yoast-seo-link"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "create wp-yoast-seo-link"
+        required: true
+        schema:
+          $ref: "#/definitions/WpYoastSeoLink"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+
+  /wp-yoast-seo-link/{Id}:
+    get:
+      tags:
+      - "wp-yoast-seo-link"
+      summary: "get a wp-yoast-seo-link by ID"
+      description: "get a wp-yoast-seo-link by ID"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id"
+        in: "path"
+        description: "ID of wp-yoast-seo-link to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/WpYoastSeoLink"
+    delete:
+      tags:
+      - "wp-yoast-seo-link"
+      summary: "Destroy a wp-yoast-seo-link by ID"
+      description: "delete a wp-yoast-seo-link by ID"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id"
+        in: "path"
+        description: "ID of wp-yoast-seo-link to delete"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+  
+
+
+definitions:
+
+  WpLitespeedImgOptm:
+    type: "object"
+    properties:
+      
+      id:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      post_id:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      optm_status:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      src:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      srcpath_md5:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      src_md5:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      server:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      root_id:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      src_filesize:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      target_filesize:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      target_saved:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      webp_filesize:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      webp_saved:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+  WpLitespeedImgOptmPagination:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        description: "json repose code"
+        format: "int32"
+      total:
+        type: "integer"
+        description: "total numbers"
+        format: "int32"
+      offset:
+        type: "integer"
+        description: "offset"
+        format: "int32"
+      limit:
+        type: "integer"
+        description: "limit"
+        format: "int32"
+      list:
+        type: "array"
+        items:
+          $ref: "#/definitions/WpLitespeedImgOptm"
+
+
+  WpLitespeedOptimizer:
+    type: "object"
+    properties:
+      
+      id:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      hash_name:
+        type: "string"
+        description: "hash.filetype"
+        format: "string"
+      
+      src:
+        type: "string"
+        description: "full url array set"
+        format: "string"
+      
+      dateline:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      refer:
+        type: "string"
+        description: "The container page url"
+        format: "string"
+      
+  WpLitespeedOptimizerPagination:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        description: "json repose code"
+        format: "int32"
+      total:
+        type: "integer"
+        description: "total numbers"
+        format: "int32"
+      offset:
+        type: "integer"
+        description: "offset"
+        format: "int32"
+      limit:
+        type: "integer"
+        description: "limit"
+        format: "int32"
+      list:
+        type: "array"
+        items:
+          $ref: "#/definitions/WpLitespeedOptimizer"
+
+
+  WpPost:
+    type: "object"
+    properties:
+      
+      ID:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      post_author:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      post_date:
+        type: "string"
+        description: ""
+        format: "date-time"
+      
+      post_date_gmt:
+        type: "string"
+        description: ""
+        format: "date-time"
+      
+      post_content:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      post_title:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      post_excerpt:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      post_status:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      comment_status:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      ping_status:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      post_password:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      post_name:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      to_ping:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      pinged:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      post_modified:
+        type: "string"
+        description: ""
+        format: "date-time"
+      
+      post_modified_gmt:
+        type: "string"
+        description: ""
+        format: "date-time"
+      
+      post_content_filtered:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      post_parent:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      guid:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      menu_order:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      post_type:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      post_mime_type:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      comment_count:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      scrapy_key:
+        type: "string"
+        description: "scrapy爬虫的key"
+        format: "string"
+      
+  WpPostPagination:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        description: "json repose code"
+        format: "int32"
+      total:
+        type: "integer"
+        description: "total numbers"
+        format: "int32"
+      offset:
+        type: "integer"
+        description: "offset"
+        format: "int32"
+      limit:
+        type: "integer"
+        description: "limit"
+        format: "int32"
+      list:
+        type: "array"
+        items:
+          $ref: "#/definitions/WpPost"
+
+
+  WpUser:
+    type: "object"
+    properties:
+      
+      ID:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      user_login:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      user_pass:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      user_nicename:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      user_email:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      user_url:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      user_registered:
+        type: "string"
+        description: ""
+        format: "date-time"
+      
+      user_activation_key:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      user_status:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      display_name:
+        type: "string"
+        description: ""
+        format: "string"
+      
+  WpUserPagination:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        description: "json repose code"
+        format: "int32"
+      total:
+        type: "integer"
+        description: "total numbers"
+        format: "int32"
+      offset:
+        type: "integer"
+        description: "offset"
+        format: "int32"
+      limit:
+        type: "integer"
+        description: "limit"
+        format: "int32"
+      list:
+        type: "array"
+        items:
+          $ref: "#/definitions/WpUser"
+
+
+  WpYoastSeoLink:
+    type: "object"
+    properties:
+      
+      id:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      url:
+        type: "string"
+        description: ""
+        format: "string"
+      
+      post_id:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      target_post_id:
+        type: "integer"
+        description: ""
+        format: "int64"
+      
+      type:
+        type: "string"
+        description: ""
+        format: "string"
+      
+  WpYoastSeoLinkPagination:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        description: "json repose code"
+        format: "int32"
+      total:
+        type: "integer"
+        description: "total numbers"
+        format: "int32"
+      offset:
+        type: "integer"
+        description: "offset"
+        format: "int32"
+      limit:
+        type: "integer"
+        description: "limit"
+        format: "int32"
+      list:
+        type: "array"
+        items:
+          $ref: "#/definitions/WpYoastSeoLink"
+
+
+  ApiResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      msg:
+        type: "string"
+
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
